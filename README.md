@@ -16,11 +16,11 @@ We control these processes by sending stream of data by setting on action on jav
   - Arduino IDE Software
 
 # Libraries Used
-  - J-Serial Comm
+  - J-Serial Comm.
   - ojdbc 7 
   - ojdbc 14 
   - Panama Hitek_Arduino 
-  - RXTX Comm 
+  - RXTX Comm.
   
 # Authors
 - [@Ahmed Atef](https://github.com/AhmedAtef283)
