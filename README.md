@@ -17,7 +17,7 @@ We control these processes by sending stream of data by setting on action on jav
 
 # Libraries Used
   - J-Serial Comm.
-  - ojdbc 7 
+  - ojdbc 7
   - ojdbc 14 
   - Panama Hitek_Arduino 
   - RXTX Comm.
