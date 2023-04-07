@@ -1,0 +1,8 @@
+.label{
+    -fx-effect: dropshadow(one-pass-box, #144492 , 5, 50 , 0 , 0);
+    -fx-text-fill: #ffffff;
+}
+
+
+
+

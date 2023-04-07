@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="mainPane" maxHeight="600.0" minHeight="385.0" minWidth="750.0" prefHeight="600.0" prefWidth="750.0" style="-fx-background-image: url(&quot; background.jpg&quot;);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arduinojava.FXMLDocumentController">
+   <children>
+      <BorderPane layoutY="-4.0" prefHeight="347.0" prefWidth="893.0">
+         <top>
+            <HBox prefHeight="30.0" prefWidth="893.0" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <VBox prefHeight="113.0" prefWidth="893.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FlowPane prefHeight="40.0" prefWidth="893.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="32.0" text=" " />
+                        <ImageView fitHeight="33.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../serial.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="18.0" prefWidth="11.0" text=" " />
+                        <Label fx:id="serialConnection" alignment="CENTER" prefHeight="38.0" prefWidth="124.0" text="Serial Connection">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </FlowPane>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="62.0" text=" " />
+                        <ComboBox fx:id="combo" prefHeight="40.0" prefWidth="204.0" promptText="Choose COM" />
+                        <Label prefHeight="18.0" prefWidth="34.0" text=" " />
+                        <Button fx:id="connectButton" mnemonicParsing="false" onAction="#ConnectPress" prefHeight="40.0" prefWidth="146.0" text="Connect" />
+                        <Label prefHeight="18.0" prefWidth="34.0" text=" " />
+                        <Button fx:id="disconnectButton" mnemonicParsing="false" onAction="#DisconnectPress" prefHeight="40.0" prefWidth="146.0" text="Disconnect" />
+                     </children>
+                  </FlowPane>
+               </children>
+            </VBox>
+         </bottom>
+         <left>
+            <FlowPane prefHeight="200.0" prefWidth="262.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="46.0" />
+                  <VBox prefHeight="200.0" prefWidth="204.0">
+                     <children>
+                        <FlowPane>
+                           <children>
+                              <ImageView fitHeight="31.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../lcd.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lcdControl" alignment="CENTER" prefHeight="38.0" prefWidth="98.0" text="LCD Control">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <FlowPane>
+                           <children>
+                              <TextArea fx:id="textField" prefHeight="94.0" prefWidth="204.0" />
+                              <FlowPane prefHeight="13.0" prefWidth="200.0" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane prefHeight="30.0" prefWidth="204.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="17.0" text=" " />
+                              <Button fx:id="writeButton" mnemonicParsing="false" onAction="#WriteTo" prefHeight="33.0" prefWidth="75.0" text="Write" />
+                              <Label prefHeight="8.0" prefWidth="22.0" text=" " />
+                              <Button fx:id="clearButton" mnemonicParsing="false" onAction="#ClearArduino" prefHeight="33.0" prefWidth="75.0" text="Clear" />
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </children>
+            </FlowPane>
+         </left>
+         <center>
+            <FlowPane prefHeight="200.0" prefWidth="420.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="38.0" />
+                  <VBox prefHeight="200.0" prefWidth="469.0">
+                     <children>
+                        <FlowPane prefHeight="39.0" prefWidth="469.0">
+                           <children>
+                              <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../led.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="pinControl" alignment="CENTER" prefHeight="38.0" prefWidth="98.0" text="Pin Control">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <FlowPane prefHeight="119.0" prefWidth="553.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="17.0" text=" " />
+                              <VBox prefHeight="72.0" prefWidth="451.0">
+                                 <children>
+                                    <FlowPane prefHeight="0.0" prefWidth="451.0" />
+                                    <FlowPane prefHeight="46.0" prefWidth="451.0">
+                                       <children>
+                                          <Label prefHeight="23.0" prefWidth="4.0" text=" " />
+                                          <ComboBox fx:id="pinCombo" onAction="#SelectPin" prefHeight="39.0" prefWidth="215.0" promptText="Select pin" visibleRowCount="5" />
+                                          <Label prefHeight="18.0" prefWidth="15.0" text=" " />
+                                          <Label fx:id="digitalLabel" prefHeight="33.0" prefWidth="81.0" style="-fx-alignment: center;" text=" ">
+                                             <font>
+                                                <Font name="Berlin Sans FB" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <ToggleButton fx:id="toggle" mnemonicParsing="false" onAction="#TogglePress" prefHeight="30.0" prefWidth="98.0" style="-fx-background-color: fb2c2c;" text="LOW" textFill="WHITE">
+                                             <font>
+                                                <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                                             </font>
+                                          </ToggleButton>
+                                          <HBox prefHeight="14.0" prefWidth="443.0" />
+                                          <FlowPane prefHeight="76.0" prefWidth="413.0">
+                                             <children>
+                                                <Label prefHeight="18.0" prefWidth="3.0" text=" " />
+                                                <ProgressBar fx:id="progress" prefHeight="27.0" prefWidth="308.0" progress="0.0" />
+                                                <Label prefHeight="18.0" prefWidth="14.0" text=" " />
+                                                <Label fx:id="AnalogReading" alignment="CENTER" prefHeight="30.0" prefWidth="86.0" text="Not Connected" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label prefHeight="18.0" prefWidth="4.0" text=" " />
+                                                <Button fx:id="ChartButton" mnemonicParsing="false" onAction="#ViewChart" prefHeight="38.0" prefWidth="112.0" text="View Chart" />
+                                             </children>
+                                          </FlowPane>
+                                       </children>
+                                    </FlowPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </VBox>
+               </children>
+            </FlowPane>
+         </center>
+      </BorderPane>
+      <TextArea fx:id="console" editable="false" layoutX="32.0" layoutY="379.0" minHeight="0.0" minWidth="0.0" opacity="0.75" prefHeight="196.0" prefWidth="690.0" style="-fx-control-inner-background: #000000;" />
+      <Label fx:id="consoleLabel" layoutX="76.0" layoutY="338.0" prefHeight="33.0" prefWidth="80.0" text="Console">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="arrowImage" fitHeight="30.0" fitWidth="35.0" layoutX="39.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../down.png" />
+         </image>
+      </ImageView>
+      <StackPane fx:id="stack" layoutX="39.0" layoutY="338.0" prefHeight="33.0" prefWidth="110.0">
+         <children>
+            <Button fx:id="arrow" layoutX="35.0" layoutY="30.0" mnemonicParsing="false" onAction="#ArrowClick" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: transparent;" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
